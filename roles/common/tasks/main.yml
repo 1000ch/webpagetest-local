@@ -1,0 +1,2 @@
+- include: yum.yml
+- include: httpd.yml
