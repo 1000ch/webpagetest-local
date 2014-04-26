@@ -1,22 +1,22 @@
 - name: remove welcome.conf
-  file:
+  file: >
     path=/etc/httpd/conf.d/welcome.conf
     state=absent
 
 - name: be sure httpd is configured
-  template: src=httpd.conf.j2 dest=/etc/httpd/conf/httpd.conf
+  template: >
+    src=httpd.conf.j2
+    dest=/etc/httpd/conf/httpd.conf
 
-- name: create directories for WebPagetest
-  command: mkdir -p /var/www/webpagetest/{{item}}
-  with_items:
-    - tmp
-    - results
-    - work/jobs
-    - work/video
-    - logs
-
-- name: change DocumentRoot owner
-  command: chown -R apache:apache /var/www/webpagetest
+- name: create webpagetest directory
+  file: >
+    path=/var/www/webpagetest/
+    state=directory
+    owner=apache
+    group=apache
 
 - name: be sure httpd is running and enabled
-  service: name=httpd state=running enabled=yes
+  service: >
+    name=httpd
+    state=running
+    enabled=yes

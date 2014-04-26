@@ -1,0 +1,10 @@
+- name: download webpagetest
+  get_url: >
+    url=https://github.com/WPO-Foundation/webpagetest/releases/download/WebPagetest-2.14/webpagetest_2.14.zip
+    dest=/tmp/webpagetest_2.14.zip
+
+- name: extract chromedriver from archive
+  command: unzip -o /tmp/webpagetest_2.14.zip -d /tmp/webpagetest_2.14
+
+- name: copy www directory
+  shell: cp -r /tmp/webpagetest_2.14/www/* /var/www/webpagetest/
