@@ -1,5 +1,7 @@
 - name: be sure yum rpmforge repository is add
-  command: rpm -Uhv http://packages.sw.be/rpmforge-release/rpmforge-release-0.5.2-2.el6.rf.x86_64.rpm
+  yum:
+    name=http://packages.sw.be/rpmforge-release/rpmforge-release-0.5.3-1.el6.rf.x86_64.rpm
+    state=present
 
 - name: be sure yum centos repository is add
   template: src=centos.repo.j2 dest=/etc/yum.repos.d/centos.repo

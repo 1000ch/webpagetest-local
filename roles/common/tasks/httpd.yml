@@ -1,5 +1,7 @@
 - name: remove welcome.conf
-  command: rm /etc/httpd/conf.d/welcome.conf
+  file:
+    path=/etc/httpd/conf.d/welcome.conf
+    state=absent
 
 - name: be sure httpd is configured
   template: src=httpd.conf.j2 dest=/etc/httpd/conf/httpd.conf
