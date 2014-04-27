@@ -4,8 +4,12 @@
 VAGRANTFILE_API_VERSION = "2"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
-  config.vm.box = "parallels/centos-6.5"
-  config.vm.hostname = "webpagetest-local"
+  config.vm.box = "chef/centos-6.5"
+
+  config.vm.provider "parallels" do |v, override|
+    override.vm.box = "parallels/centos-6.5"
+  end
+  config.vm.hostname = "webpagetest.local"
 
   config.vm.network :forwarded_port, guest: 80, host: 8080
   config.vm.network :private_network, ip: "192.168.33.33"
