@@ -1,4 +1,4 @@
-# webpagetest-local
+# webpagetest-private
 
 ## About
 
@@ -17,7 +17,7 @@ $ brew install ansible
 ### Clone repositories
 
 ```sh
-$ git clone https://github.com/bayandin/webpagetest-local.git
+$ git clone https://github.com/bayandin/webpagetest-private.git
 ```
 
 ### Boot vagrant

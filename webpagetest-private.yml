@@ -1,4 +1,4 @@
-- hosts: webpagetest-local
+- hosts: webpagetest-private
   sudo: yes
   vars:
     host_name: 192.168.33.33
