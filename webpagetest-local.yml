@@ -1,7 +1,0 @@
-- hosts: webpagetest-local
-  sudo: yes
-  vars:
-    host_name: 192.168.33.10
-    port_no: 8080
-  roles:
-    - common

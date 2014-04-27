@@ -85,7 +85,7 @@ KeepAliveTimeout 15
 # directive.
 #
 #Listen 12.34.56.78:80
-Listen {{port_no}}
+Listen {{ port_no }}
 
 #
 # Dynamic Shared Object (DSO) Support
@@ -176,7 +176,7 @@ ServerAdmin root@localhost
 # This can often be determined automatically, but we recommend you specify
 # it explicitly to prevent problems during startup.
 #
-ServerName {{host_name}}:{{port_no}}
+ServerName {{ host_name }}:{{ port_no }}
 
 #
 # UseCanonicalName: Determines how Apache constructs self-referencing
@@ -185,7 +185,7 @@ ServerName {{host_name}}:{{port_no}}
 UseCanonicalName Off
 
 #
-# DocumentRoot: The directory out of which you will serve your documents. 
+# DocumentRoot: The directory out of which you will serve your documents.
 #
 DocumentRoot "/var/www/webpagetest"
 

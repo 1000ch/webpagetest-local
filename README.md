@@ -1,42 +1,38 @@
-# webpagetest-local
+# webpagetest-private
 
 ## About
 
-To debug [WebPagetest Private Instance](https://github.com/WPO-Foundation/webpagetest) at local.
+For local installation [WebPagetest Private Instance](https://github.com/WPO-Foundation/webpagetest)
 
-## Premise
+## Requirements
 
-### [ansible](http://www.ansibleworks.com/) is required on your Mac.
-
-```sh
-$ brew install ansible
-```
+* [Vagrant](http://vagrantup.com/)
+* [VirtualBox](http://virtualbox.org) or [Parallels Desktop for Mac](http://www.parallels.com/products/desktop/)
+* [Ansible](http://ansible.com/) for provisioning
 
 ## Usage
 
-### Clone repositories
+### Clone repository
 
 ```sh
-$ git clone https://github.com/WPO-Foundation/webpagetest.git
-$ git clone https://github.com/1000ch/webpagetest-local.git
+$ git clone https://github.com/bayandin/webpagetest-private.git
 ```
 
 ### Boot vagrant
 
 ```sh
-$ vagrant up --provision
+$ vagrant up
 ```
 
-### If you encountered error...
-
-See [Fixing 'vagrant up' Errors](http://davidwalsh.name/fixing-vagrant-errors).
+Or, if you have installed [Parallels Desktop for Mac](http://www.parallels.com/products/desktop/) you can use it as vagrant provider
 
 ```sh
-$ sudo /Library/StartupItems/VirtualBox/VirtualBox restart
+$ vagrant plugin install vagrant-parallels
+$ vagrant up --provider=parallels
 ```
 
-### Browse `http://192.168.33.10:8080`
+### Browse `http://192.168.33.33:8080`
 
 ## License
 
-MIT.
+MIT
